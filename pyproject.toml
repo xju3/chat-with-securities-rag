@@ -1,0 +1,32 @@
+[project]
+name = "chat-with-securities-rag"
+version = "0.1.0"
+description = "chat with securities of china stock markets"
+authors = [
+    {name = "xiangjun.ju@gmail.com"}
+]
+license = {text = "Apache2"}
+readme = "README.md"
+requires-python = ">=3.11,<4.0"
+dependencies = [
+     "akshare (>=1.15.67)",
+     "langchain (>=0.3.14,<0.4.0)",
+     "langchain-openai (>=0.2.14,<0.3.0)",
+     "sqlalchemy (>=2.0.36,<3.0.0)",
+     "mysql-connector-python (>=9.1.0,<10.0.0)",
+     "sqlmodel (>=0.0.22,<0.0.23)",
+     "psycopg2-binary (>=2.9.10,<3.0.0)",
+     "asyncpg (>=0.30.0,<0.31.0)",
+     "python-dotenv (>=1.0.1,<2.0.0)",
+]
+[tool.poetry]
+packages = [
+    {include = "chat", from = "src"},
+    {include = "data", from = "src"}, 
+    {include = "pub", from = "src"}, 
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
